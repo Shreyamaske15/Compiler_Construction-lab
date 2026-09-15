@@ -1,0 +1,14 @@
+%{
+// SHREYA MASKE  24070521196  c2
+#include<stdio.h>
+%}
+%%
+one|ONE		printf("1");
+nine|NINE	printf("9");
+six|SIX		printf("6");
+%%
+int main()
+{
+yylex();
+return 0;
+}
