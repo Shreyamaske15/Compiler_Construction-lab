@@ -1,0 +1,25 @@
+%{
+//SHREYA MASKE 24070521196 C2
+#include <stdio.h>
+int count = 0;
+%}
+
+%%
+
+[Aa][a-zA-Z]*       { count++; }
+[a-zA-Z]+           { /* Ignore all other characters */ }
+[ \t\n]+      	    { /* Ignore newlines */ }
+.		    { /*do nothing*/ }
+ 
+%%
+
+int yywrap() {
+return 1;
+}
+
+int main(){
+printf("Enter a string:");
+yylex();
+printf("Number of a's: %d\n", count);
+return 0;
+}
